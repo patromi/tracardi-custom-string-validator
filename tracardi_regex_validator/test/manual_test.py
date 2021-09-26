@@ -4,7 +4,7 @@ from tracardi.domain.event import Event
 from tracardi.domain.profile import Profile
 from tracardi.domain.session import Session
 from tracardi_plugin_sdk.service.plugin_runner import run_plugin
-from tracardi_custom_string_validator.plugin import ValidatorAction
+from tracardi_regex_validator.plugin import ValidatorAction
 
 init = {'validation_regex': r'^([0-1]?[0-9]|2[0-3]):[0-5][0-9](:?)([0-5]?[0-9]?)$',
         'data': "12:32"}

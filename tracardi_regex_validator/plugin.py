@@ -2,8 +2,8 @@ from tracardi_plugin_sdk.action_runner import ActionRunner
 from tracardi_plugin_sdk.domain.register import Plugin, Spec, MetaData
 from tracardi_plugin_sdk.domain.result import Result
 
-from tracardi_custom_string_validator.model.configuration import Configuration
-from tracardi_custom_string_validator.service.validator import Validator
+from tracardi_regex_validator.model.configuration import Configuration
+from tracardi_regex_validator.service.validator import Validator
 
 
 class ValidatorAction(ActionRunner):
@@ -12,7 +12,7 @@ class ValidatorAction(ActionRunner):
         self.validator = Validator(self.config)
 
     async def run(self, payload):
-        if self.validator.check():
+        if self.validator.check() is not None:
             return Result(port='payload', value=True)
         else:
             return Result(port='payload', value=False)
@@ -36,12 +36,12 @@ def register() -> Plugin:
 
         ),
         metadata=MetaData(
-            name='ValidatorAction',
+            name='Regex validator',
             desc='Validation of data with custom regex',
             type='flowNode',
             width=200,
             height=100,
-            icon='validation_name',
+            icon='icon',
             group=["Validations"]
         )
     )
