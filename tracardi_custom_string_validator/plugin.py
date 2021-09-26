@@ -37,7 +37,7 @@ def register() -> Plugin:
         ),
         metadata=MetaData(
             name='ValidatorAction',
-            desc='Validation of data such as: email, url, ipv4, date, time,int,float, phone number, ean code',
+            desc='Validation of data with custom regex',
             type='flowNode',
             width=200,
             height=100,
