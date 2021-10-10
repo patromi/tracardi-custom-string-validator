@@ -12,7 +12,6 @@ class ValidatorAction(ActionRunner):
         self.config = Configuration(**kwargs)
         self.validator = Validator(self.config)
 
-    "functionality"
     async def run(self, payload):
         dot = DotAccessor(self.profile, self.session, payload, self.event, self.flow)
         string = dot[self.config.data]
