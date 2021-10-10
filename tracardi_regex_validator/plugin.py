@@ -1,3 +1,4 @@
+from tracardi_dot_notation.dot_accessor import DotAccessor
 from tracardi_plugin_sdk.action_runner import ActionRunner
 from tracardi_plugin_sdk.domain.register import Plugin, Spec, MetaData
 from tracardi_plugin_sdk.domain.result import Result
@@ -11,8 +12,11 @@ class ValidatorAction(ActionRunner):
         self.config = Configuration(**kwargs)
         self.validator = Validator(self.config)
 
+    "functionality"
     async def run(self, payload):
-        if self.validator.check() is not None:
+        dot = DotAccessor(self.profile, self.session, payload, self.event, self.flow)
+        string = dot[self.config.data]
+        if self.validator.check(string) is not None:
             return Result(port='payload', value=True)
         else:
             return Result(port='payload', value=False)

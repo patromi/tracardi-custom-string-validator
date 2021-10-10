@@ -8,6 +8,6 @@ class Validator:
     def __init__(self, config: Configuration):
         self.config = config
 
-    def check(self) -> Optional[Match[str]]:
+    def check(self,string) -> Optional[Match[str]]:
         """Check the validation"""
-        return re.match(self.config.validation_regex, self.config.data)
+        return re.match(self.config.validation_regex, string)
