@@ -4,14 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name='tracardi-custom-string-validator',
+    name='tracardi-regex-validator',
     version='0.1',
     description='This plugin validate data with custom regex',
     long_description=long_description,
     long_description_content_type="text/markdown",
     author='Patryk Migaj',
     author_email='patromi123@gmail.com',
-    packages=['tracardi_custom_string_validator'],
+    packages=['tracardi_regex_validator'],
     install_requires=[
         'tracardi-plugin-sdk',
         'tracardi'
