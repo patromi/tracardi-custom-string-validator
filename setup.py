@@ -5,8 +5,8 @@ with open("README.md", "r") as fh:
 
 setup(
     name='tracardi-regex-validator',
-    version='0.1.1',
-    description='This plugin validate data with custom regex',
+    version='0.1.2',
+    description='This plugin validates data with regex pattern.',
     long_description=long_description,
     long_description_content_type="text/markdown",
     author='Patryk Migaj',

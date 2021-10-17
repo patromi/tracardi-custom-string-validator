@@ -30,18 +30,18 @@ def register() -> Plugin:
                 'validation_regex': None,
                 'data': None
             },
-            version='0.1.1',
+            version='0.1.2',
             license="MIT",
             author="Patryk Migaj"
 
         ),
         metadata=MetaData(
             name='Regex validator',
-            desc='Validation of data with custom regex',
+            desc='Validates data with regex pattern',
             type='flowNode',
             width=200,
             height=100,
-            icon='icon',
-            group=["Validations"]
+            icon='regex',
+            group=["Validators"]
         )
     )
