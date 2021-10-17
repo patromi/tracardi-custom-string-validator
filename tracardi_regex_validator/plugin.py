@@ -6,7 +6,7 @@ from tracardi_regex_validator.model.configuration import Configuration
 from tracardi_regex_validator.service.validator import Validator
 
 
-class ValidatorAction(ActionRunner):
+class RegexValidatorAction(ActionRunner):
     def __init__(self, **kwargs):
         self.config = Configuration(**kwargs)
         self.validator = Validator(self.config)
@@ -22,15 +22,15 @@ def register() -> Plugin:
     return Plugin(
         start=False,
         spec=Spec(
-            module='tracardi_string_validator.plugin',
-            className='ValidatorAction',
+            module='tracardi_regex_validator.plugin',
+            className='RegexValidatorAction',
             inputs=["payload"],
             outputs=["payload"],
             init={
                 'validation_regex': None,
                 'data': None
             },
-            version='0.1',
+            version='0.1.1',
             license="MIT",
             author="Patryk Migaj"
 

@@ -3,4 +3,4 @@ python -m twine upload dist/*
 
 rm -rf build
 rm -rf dist
-rm -rf tracardi_custom_string_validator.egg-info
+rm -rf tracardi_regex_validator.egg-info
