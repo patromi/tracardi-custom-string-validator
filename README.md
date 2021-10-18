@@ -21,6 +21,13 @@ This node require configuration.
 
 ```
 It will return True
+```json
+    {"validation_regex":"^a",
+    "data":"hello!"
+
+
+```
+It will return False
 
 # Input payload
 This node does not process input payload.
