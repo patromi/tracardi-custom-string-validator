@@ -13,7 +13,7 @@ This node require configuration.
 *validation_regex - Paste here your regex. 
 *data - Here is data what we want to validate
 
-# Example
+# Examples
 ```json
     {"validation_regex":"^h",
     "data":"hello!"
