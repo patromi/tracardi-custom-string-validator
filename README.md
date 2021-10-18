@@ -4,7 +4,7 @@ This code can be run within Tracardi workflow.
 
 # Sending mail with tracarti
 
-The purpose of this plugin is valide data with custom regex.
+The purpose of this plugin is valide data with custom regex. 
 
 
 # Configuration
