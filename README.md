@@ -20,7 +20,7 @@ This node require configuration.
 
 
 ```
-It's return True
+It will return True
 
 # Input payload
 This node does not process input payload.
