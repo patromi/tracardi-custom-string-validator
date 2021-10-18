@@ -1,6 +1,6 @@
 # Tracardi plugin: Custom String Validator
 
-The purpose of this plugin is valide data with custom regex.
+The purpose of this plugin is to validate data with custom regex.
 
 # Configuration
 
