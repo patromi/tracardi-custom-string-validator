@@ -10,8 +10,8 @@ The purpose of this plugin is valide data with custom regex.
 # Configuration
 
 This node require configuration.
-*validation_regex - Paste here your regex. 
-*data - Here is data what we want to validate
+* validation_regex - Paste here your regex. 
+* data - Here is data what we want to validate
 
 # Examples
 ```json
