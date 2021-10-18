@@ -1,8 +1,4 @@
-# Tracardi plugin
-
-This code can be run within Tracardi workflow.
-
-# Custom String Validator
+# Tracardi plugin: Custom String Validator
 
 The purpose of this plugin is valide data with custom regex. 
 
