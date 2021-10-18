@@ -2,7 +2,7 @@
 
 This code can be run within Tracardi workflow.
 
-# Sending mail with tracarti
+# Custom String Validator
 
 The purpose of this plugin is valide data with custom regex. 
 
@@ -16,14 +16,14 @@ This node require configuration.
 # Examples
 ```json
     {"validation_regex":"^h",
-    "data":"hello!"
+    "data":"hello!"}
 
 
 ```
 It will return True
 ```json
     {"validation_regex":"^a",
-    "data":"hello!"
+    "data":"hello!"}
 
 
 ```
