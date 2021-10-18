@@ -10,27 +10,22 @@ This node require configuration.
 * data - Here is data what we want to validate
 
 # Examples
-
 ```json
-{
-  "validation_regex":"^h",
-    "data":"hello!"
-}
-```
+    {"validation_regex":"^h",
+    "data":"hello!"}
 
+
+```
 It will return True
-
 ```json
-{
-    "validation_regex":"^a",
-    "data":"hello!"
-}
-```
+    {"validation_regex":"^a",
+    "data":"hello!"}
 
+
+```
 It will return False
 
 # Input payload
-
 This node does not process input payload.
 
 # Output
