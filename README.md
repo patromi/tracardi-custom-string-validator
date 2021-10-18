@@ -1,33 +1,38 @@
-# Tracardi plugin: Custom String Validator
+# Tracardi plugin: String Validator
 
-The purpose of this plugin is valide data with custom regex. 
-
+The purpose of this plugin is to validate data with custom regex.
 
 # Configuration
 
 This node require configuration.
-* validation_regex - Paste here your regex. 
-* data - Here is data what we want to validate
+
+* validation_regex - paste here your regex.
+* data - here is data what we want to validate
 
 # Examples
+
 ```json
-    {"validation_regex":"^h",
-    "data":"hello!"}
-
-
+{
+  "validation_regex": "^h",
+  "data": "hello!"
+}
 ```
-It will return True
+
+It will return TRUE
+
 ```json
-    {"validation_regex":"^a",
-    "data":"hello!"}
-
-
+{
+  "validation_regex": "^a",
+  "data": "hello!"
+}
 ```
-It will return False
+
+It will return FALSE
 
 # Input payload
+
 This node does not process input payload.
 
 # Output
 
-This is two output True and False.
+This is two output TRUE and FALSE.

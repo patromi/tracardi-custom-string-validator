@@ -5,16 +5,16 @@ with open("README.md", "r") as fh:
 
 setup(
     name='tracardi-regex-validator',
-    version='0.1',
-    description='This plugin validate data with custom regex',
+    version='0.1.2',
+    description='This plugin validates data with regex pattern.',
     long_description=long_description,
     long_description_content_type="text/markdown",
     author='Patryk Migaj',
     author_email='patromi123@gmail.com',
     packages=['tracardi_regex_validator'],
     install_requires=[
-        'tracardi-plugin-sdk',
-        'tracardi'
+        'tracardi-plugin-sdk>=0.6.21',
+        'tracardi>=0.6.18,<0.7.0'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
