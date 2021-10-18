@@ -33,6 +33,7 @@ def register() -> Plugin:
                 'validation_regex': None,
                 'data': None
             },
+            manual="regex_validator_action",
             version='0.1.2',
             license="MIT",
             author="Patryk Migaj"
