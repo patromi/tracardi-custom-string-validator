@@ -16,8 +16,6 @@ This node require configuration.
   "validation_regex":"^h",
     "data":"hello!"
 }
-
-
 ```
 
 It will return True
@@ -27,8 +25,6 @@ It will return True
     "validation_regex":"^a",
     "data":"hello!"
 }
-
-
 ```
 
 It will return False
