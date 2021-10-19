@@ -16,9 +16,9 @@ class RegexValidatorAction(ActionRunner):
         dot = DotAccessor(self.profile, self.session, payload, self.event, self.flow)
         string = dot[self.config.data]
         if self.validator.check(string) is not None:
-            return Result(port='payload', value=True)
+            return Result(port='payload', value={"result": True})
         else:
-            return Result(port='payload', value=False)
+            return Result(port='payload', value={"result": False})
 
 
 def register() -> Plugin:
