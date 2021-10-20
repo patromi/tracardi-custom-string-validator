@@ -1,4 +1,3 @@
-from tracardi_dot_notation.dot_accessor import DotAccessor
 from tracardi_plugin_sdk.action_runner import ActionRunner
 from tracardi_plugin_sdk.domain.register import Plugin, Spec, MetaData, Form, FormGroup, FormField, FormComponent
 from tracardi_plugin_sdk.domain.result import Result
@@ -17,7 +16,7 @@ class RegexValidatorAction(ActionRunner):
         self.validator = Validator(self.config)
 
     async def run(self, payload):
-        dot = DotAccessor(self.profile, self.session, payload, self.event, self.flow)
+        dot = self._get_dot_accessor(payload)
         string = dot[self.config.data]
         if self.validator.check(string) is not None:
             return Result(port='payload', value={"result": True})

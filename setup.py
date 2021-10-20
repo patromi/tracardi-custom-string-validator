@@ -14,7 +14,7 @@ setup(
     packages=['tracardi_regex_validator'],
     install_requires=[
         'tracardi-plugin-sdk>=0.6.22',
-        'tracardi>=0.6.18,<0.7.0'
+        'pydantic'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
