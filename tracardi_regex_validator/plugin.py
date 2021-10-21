@@ -55,7 +55,7 @@ def register() -> Plugin:
                 ),
             ]),
             manual="regex_validator_action",
-            version='0.6.0',
+            version='0.6.1',
             license="MIT",
             author="Patryk Migaj"
 

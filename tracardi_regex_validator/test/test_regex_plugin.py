@@ -9,4 +9,5 @@ def test_regex_validator_plugin():
 
     result = run_plugin(RegexValidatorAction, init, payload)
 
-    assert result.output.value == {'result': True}
+    valid, invalid = result.output
+    assert invalid.value is None
