@@ -1,24 +1,27 @@
-from tracardi_dot_notation.dot_accessor import DotAccessor
 from tracardi_plugin_sdk.action_runner import ActionRunner
-from tracardi_plugin_sdk.domain.register import Plugin, Spec, MetaData
+from tracardi_plugin_sdk.domain.register import Plugin, Spec, MetaData, Form, FormGroup, FormField, FormComponent
 from tracardi_plugin_sdk.domain.result import Result
 
 from tracardi_regex_validator.model.configuration import Configuration
 from tracardi_regex_validator.service.validator import Validator
 
 
+def validate(config: dict) -> Configuration:
+    return Configuration(**config)
+
+
 class RegexValidatorAction(ActionRunner):
     def __init__(self, **kwargs):
-        self.config = Configuration(**kwargs)
+        self.config = validate(kwargs)
         self.validator = Validator(self.config)
 
     async def run(self, payload):
-        dot = DotAccessor(self.profile, self.session, payload, self.event, self.flow)
+        dot = self._get_dot_accessor(payload)
         string = dot[self.config.data]
         if self.validator.check(string) is not None:
-            return Result(port='payload', value={"result": True})
+            return Result(port='valid', value=payload), Result(port='invalid', value=None)
         else:
-            return Result(port='payload', value={"result": False})
+            return Result(port='valid', value=None), Result(port='invalid', value=payload)
 
 
 def register() -> Plugin:
@@ -28,13 +31,31 @@ def register() -> Plugin:
             module='tracardi_regex_validator.plugin',
             className='RegexValidatorAction',
             inputs=["payload"],
-            outputs=["payload"],
+            outputs=["valid", "invalid"],
             init={
                 'validation_regex': None,
                 'data': None
             },
+            form=Form(groups=[
+                FormGroup(
+                    fields=[
+                        FormField(
+                            id="validation_regex",
+                            name="Regex pattern",
+                            description="Type regex pattern that will validate data.",
+                            component=FormComponent(type="text", props={"label": "Regex pattern"})
+                        ),
+                        FormField(
+                            id="data",
+                            name="Path to data",
+                            description="Type path to data that will be validated.",
+                            component=FormComponent(type="forceDotPath", props={"defaultSourceValue": "event"})
+                        )
+                    ]
+                ),
+            ]),
             manual="regex_validator_action",
-            version='0.1.2',
+            version='0.6.1',
             license="MIT",
             author="Patryk Migaj"
 

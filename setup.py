@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='tracardi-regex-validator',
-    version='0.1.2',
+    version='0.6.1',
     description='This plugin validates data with regex pattern.',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -13,8 +13,8 @@ setup(
     author_email='patromi123@gmail.com',
     packages=['tracardi_regex_validator'],
     install_requires=[
-        'tracardi-plugin-sdk>=0.6.21',
-        'tracardi>=0.6.18,<0.7.0'
+        'tracardi-plugin-sdk>=0.6.22',
+        'pydantic'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
