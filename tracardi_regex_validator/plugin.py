@@ -19,9 +19,9 @@ class RegexValidatorAction(ActionRunner):
         dot = self._get_dot_accessor(payload)
         string = dot[self.config.data]
         if self.validator.check(string) is not None:
-            return Result(port='payload', value={"result": True})
+            return Result(port='valid', value=payload), Result(port='invalid', value=None)
         else:
-            return Result(port='payload', value={"result": False})
+            return Result(port='valid', value=None), Result(port='invalid', value=payload)
 
 
 def register() -> Plugin:
@@ -31,7 +31,7 @@ def register() -> Plugin:
             module='tracardi_regex_validator.plugin',
             className='RegexValidatorAction',
             inputs=["payload"],
-            outputs=["payload"],
+            outputs=["valid", "invalid"],
             init={
                 'validation_regex': None,
                 'data': None
